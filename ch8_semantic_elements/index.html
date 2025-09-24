@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Semantic Web App — Minimal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="A minimal semantic HTML + CSS web app template." />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">
+        <a href="/" aria-current="page">Semantic<span>App</span></a>
+      </h1>
+
+      <nav aria-label="Primary" class="primary-nav">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div>
+          <h2 id="hero-title">Build with real HTML semantics</h2>
+          <p class="lead">
+            A lightweight starter that showcases semantic elements, accessible structure, and clean, compact styling—without JavaScript.
+          </p>
+          <p>
+            <a class="btn" href="#features">Explore Features</a>
+          </p>
+        </div>
+
+        <figure class="hero-figure">
+          <img src="https://picsum.photos/600/360?grayscale" alt="Abstract minimal hero illustration" />
+          <figcaption>Figure: Minimal layout preview</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Features + Aside -->
+    <section id="features" aria-labelledby="features-title" class="section">
+      <div class="container grid">
+        <div class="content">
+          <h2 id="features-title">Features</h2>
+
+          <article class="card" aria-labelledby="feature1-title">
+            <header>
+              <h3 id="feature1-title">Semantic Layout</h3>
+            </header>
+            <p>
+              Uses <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, and <code>&lt;footer&gt;</code>.
+            </p>
+            <footer>
+              <p class="muted">Last updated <time datetime="2025-09-17">17 Sep 2025</time></p>
+            </footer>
+          </article>
+
+          <article class="card" aria-labelledby="feature2-title">
+            <header>
+              <h3 id="feature2-title">Accessible First</h3>
+            </header>
+            <p>Skip link, clear landmarks, proper headings, focus states, and high-contrast defaults.</p>
+            <details>
+              <summary>What else is accessible here?</summary>
+              <p>Color contrast, logical tab order, link focus rings, form labels, and ARIA where helpful.</p>
+            </details>
+          </article>
+
+          <article class="card" aria-labelledby="feature3-title">
+            <header>
+              <h3 id="feature3-title">Responsive Grid</h3>
+            </header>
+            <p>Simple CSS Grid and modern fluid typography. No framework required.</p>
+          </article>
+        </div>
+
+        <aside class="sidebar" aria-labelledby="aside-title">
+          <h2 id="aside-title">Quick Info</h2>
+          <ul class="list">
+            <li>Zero JS</li>
+            <li>Dark mode via <code>prefers-color-scheme</code></li>
+            <li>Print-friendly</li>
+          </ul>
+
+          <section aria-labelledby="faq-title" class="faq">
+            <h3 id="faq-title">FAQ</h3>
+            <details>
+              <summary>Can I add more pages?</summary>
+              <p>Yes—duplicate this file or split sections into pages. The nav uses anchor links for now.</p>
+            </details>
+            <details>
+              <summary>How do I customize colors?</summary>
+              <p>Edit CSS variables in <code>:root</code> inside <code>styles.css</code>.</p>
+            </details>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Articles -->
+    <section id="articles" aria-labelledby="articles-title" class="section alt">
+      <div class="container">
+        <h2 id="articles-title">Latest Articles</h2>
+
+        <div class="articles">
+          <article class="post" aria-labelledby="post-a11y">
+            <header>
+              <h3 id="post-a11y">Why semantics matter</h3>
+              <p class="muted">By <strong>UI Team</strong> • <time datetime="2025-08-30">30 Aug 2025</time></p>
+            </header>
+            <p>Screen readers and SEO both benefit from meaningful HTML tags and clear structure.</p>
+            <footer>
+              <a class="text-link" href="#read-more-1">Read more</a>
+            </footer>
+          </article>
+
+          <article class="post" aria-labelledby="post-css">
+            <header>
+              <h3 id="post-css">Modern CSS, no framework</h3>
+              <p class="muted">By <strong>CSS Guild</strong> • <time datetime="2025-09-10">10 Sep 2025</time></p>
+            </header>
+            <p>Custom properties, fluid type, and container queries unlock simple, robust layouts.</p>
+            <footer>
+              <a class="text-link" href="#read-more-2">Read more</a>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule (Table) -->
+    <section id="schedule" aria-labelledby="schedule-title" class="section">
+      <div class="container">
+        <h2 id="schedule-title">Weekly Schedule</h2>
+        <div class="table-wrap">
+          <table>
+            <caption class="muted">All times are local</caption>
+            <thead>
+              <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Topic</th>
+                <th scope="col">Start</th>
+                <th scope="col">End</th>
+                <th scope="col">Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Monday</th>
+                <td>Semantic HTML Basics</td>
+                <td><time datetime="09:00">09:00</time></td>
+                <td><time datetime="10:30">10:30</time></td>
+                <td>Room A</td>
+              </tr>
+              <tr>
+                <th scope="row">Wednesday</th>
+                <td>CSS Layouts</td>
+                <td><time datetime="11:00">11:00</time></td>
+                <td><time datetime="12:30">12:30</time></td>
+                <td>Room B</td>
+              </tr>
+              <tr>
+                <th scope="row">Friday</th>
+                <td>Accessibility & Forms</td>
+                <td><time datetime="14:00">14:00</time></td>
+                <td><time datetime="15:30">15:30</time></td>
+                <td>Room C</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact (Form) -->
+    <section id="contact" aria-labelledby="contact-title" class="section alt">
+      <div class="container grid">
+        <div class="content">
+          <h2 id="contact-title">Contact</h2>
+          <p>Send us a message and we’ll get back to you.</p>
+
+          <form action="#" method="post" class="form" aria-describedby="contact-help">
+            <p id="contact-help" class="muted">All fields marked * are required.</p>
+
+            <div class="field">
+              <label for="name">Full name *</label>
+              <input id="name" name="name" type="text" required autocomplete="name" />
+            </div>
+
+            <div class="field">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+            </div>
+
+            <div class="field">
+              <label for="topic">Topic</label>
+              <select id="topic" name="topic">
+                <option>General</option>
+                <option>Support</option>
+                <option>Feedback</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <fieldset>
+                <legend>Preferred contact</legend>
+                <label><input type="radio" name="contact_pref" value="email" checked /> Email</label>
+                <label><input type="radio" name="contact_pref" value="phone" /> Phone</label>
+              </fieldset>
+            </div>
+
+            <div class="field">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+
+            <div class="field">
+              <label><input type="checkbox" name="consent" required /> I agree to the privacy policy *</label>
+            </div>
+
+            <button class="btn" type="submit">Send Message</button>
+          </form>
+        </div>
+
+        <aside class="sidebar">
+          <h3>Office</h3>
+          <address>
+            SemanticApp Ltd.<br />
+            123 Markup Street<br />
+            London, UK<br />
+            <a href="mailto:hello@semantic.app">hello@semantic.app</a>
+          </address>
+          <p class="muted">Open: Mon–Fri, <time datetime="09:00">09:00</time>–<time datetime="17:00">17:00</time></p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav aria-label="Footer" class="footer-nav">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="muted">© <time datetime="2025">2025</time> SemanticApp Ltd.</p>
+    </div>
+  </footer>
+</body>
+</html>

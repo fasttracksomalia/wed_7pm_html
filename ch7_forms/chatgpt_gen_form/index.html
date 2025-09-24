@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Beautifully Styled Form (HTML + CSS)</title>
+  </head>
+  <body>
+    <main class="container">
+      <header class="page-header">
+        <h1>Account Setup & Preferences</h1>
+        <p class="subtitle">
+          A polished, accessible form showcasing common HTML inputs and form
+          elements.
+        </p>
+      </header>
+
+      <form
+        class="card"
+        action="https://google.com"
+        method="post"
+        enctype="multipart/form-data"
+        novalidate
+      >
+        <!-- Personal Information -->
+        <fieldset>
+          <legend>Personal Information</legend>
+          <div class="grid">
+            <div class="form-field">
+              <label for="firstName"
+                >First name <span aria-hidden="true" class="req">*</span></label
+              >
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="Jane"
+                required
+              />
+              <small class="hint">Use your legal first name.</small>
+            </div>
+
+            <div class="form-field">
+              <label for="lastName"
+                >Last name <span aria-hidden="true" class="req">*</span></label
+              >
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Doe"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="email"
+                >Email <span aria-hidden="true" class="req">*</span></label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="jane@company.com"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+44 7700 900123"
+                inputmode="tel"
+              />
+              <small class="hint"
+                >Include country code if outside the UK.</small
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="website">Website</label>
+              <input
+                type="url"
+                id="website"
+                name="website"
+                placeholder="https://example.com"
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="search">Search (example)</label>
+              <input
+                type="search"
+                id="search"
+                name="search"
+                placeholder="Search something…"
+              />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Account Security -->
+        <fieldset>
+          <legend>Account Security</legend>
+          <div class="grid">
+            <div class="form-field">
+              <label for="username"
+                >Username <span class="req" aria-hidden="true">*</span></label
+              >
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="jane_doe"
+                minlength="3"
+                maxlength="20"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="password"
+                >Password <span class="req" aria-hidden="true">*</span></label
+              >
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                required
+              />
+              <small class="hint"
+                >Use 8+ characters with a mix of letters & numbers.</small
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="pin">PIN (Number)</label>
+              <input
+                type="number"
+                id="pin"
+                name="pin"
+                min="0"
+                max="9999"
+                placeholder="1234"
+              />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Dates & Time -->
+        <fieldset>
+          <legend>Dates &amp; Time</legend>
+          <div class="grid">
+            <div class="form-field">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" />
+            </div>
+
+            <div class="form-field">
+              <label for="time">Time</label>
+              <input type="time" id="time" name="time" />
+            </div>
+
+            <div class="form-field">
+              <label for="datetime">Date &amp; Time (local)</label>
+              <input type="datetime-local" id="datetime" name="datetime" />
+            </div>
+
+            <div class="form-field">
+              <label for="week">Week</label>
+              <input type="week" id="week" name="week" />
+            </div>
+
+            <div class="form-field">
+              <label for="month">Month</label>
+              <input type="month" id="month" name="month" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Choices -->
+        <fieldset>
+          <legend>Choices</legend>
+          <div class="grid">
+            <div class="form-field">
+              <label for="role">Role (Select)</label>
+              <select id="role" name="role">
+                <option value="">Select a role…</option>
+                <optgroup label="Engineering">
+                  <option value="frontend">Frontend Developer</option>
+                  <option value="backend">Backend Developer</option>
+                  <option value="fullstack">Full-stack Developer</option>
+                </optgroup>
+                <optgroup label="Design">
+                  <option value="uiux">UI/UX Designer</option>
+                  <option value="product">Product Designer</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="skills">Skills (Multiple Select)</label>
+              <select id="skills" name="skills" multiple size="5">
+                <option>HTML</option>
+                <option>CSS</option>
+                <option>JavaScript</option>
+                <option>React</option>
+                <option>Node.js</option>
+                <option>SQL</option>
+                <option>Python</option>
+              </select>
+              <small class="hint">Hold Ctrl/Cmd to select multiple.</small>
+            </div>
+
+            <div class="form-field">
+              <span class="label">Plan (Radio)</span>
+              <div class="choice-group">
+                <label class="choice">
+                  <input type="radio" name="plan" value="basic" checked />
+                  <span>Basic</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="plan" value="pro" />
+                  <span>Pro</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="plan" value="enterprise" />
+                  <span>Enterprise</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <span class="label">Preferences (Checkboxes)</span>
+              <div class="choice-group">
+                <label class="choice">
+                  <input type="checkbox" name="pref_newsletter" checked />
+                  <span>Email newsletter</span>
+                </label>
+                <label class="choice">
+                  <input type="checkbox" name="pref_sms" />
+                  <span>SMS alerts</span>
+                </label>
+                <label class="choice">
+                  <input type="checkbox" name="pref_updates" />
+                  <span>Product updates</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Textarea / Datalist -->
+        <fieldset>
+          <legend>Notes & Helpers</legend>
+          <div class="grid">
+            <div class="form-field">
+              <label for="bio">Bio</label>
+              <textarea
+                id="bio"
+                name="bio"
+                rows="5"
+                placeholder="Tell us a bit about yourself…"
+              ></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="country">Country (with datalist)</label>
+              <input
+                id="country"
+                name="country"
+                list="countryList"
+                placeholder="Start typing…"
+              />
+              <datalist id="countryList">
+                <option value="United Kingdom"></option>
+                <option value="United States"></option>
+                <option value="Somalia"></option>
+                <option value="Spain"></option>
+                <option value="France"></option>
+                <option value="Germany"></option>
+              </datalist>
+              <small class="hint">Suggestions appear as you type.</small>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Files, Color, Range -->
+        <fieldset>
+          <legend>Files & Visual Inputs</legend>
+          <div class="grid">
+            <div class="form-field">
+              <label for="avatar">Avatar (File)</label>
+              <input type="file" id="avatar" name="avatar" accept="image/*" />
+            </div>
+
+            <div class="form-field">
+              <label for="resume">Resume (PDF)</label>
+              <input
+                type="file"
+                id="resume"
+                name="resume"
+                accept="application/pdf"
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="color">Theme Color</label>
+              <input type="color" id="color" name="color" value="#6b5cff" />
+            </div>
+
+            <div class="form-field">
+              <label for="range">Satisfaction (Range)</label>
+              <input
+                type="range"
+                id="range"
+                name="range"
+                min="0"
+                max="10"
+                value="7"
+              />
+              <small class="hint">0–10 scale</small>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Misc elements -->
+        <fieldset>
+          <legend>Misc Elements</legend>
+          <div class="grid">
+            <div class="form-field">
+              <label for="readonly">Read-only example</label>
+              <input
+                type="text"
+                id="readonly"
+                value="You cannot edit this"
+                readonly
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="disabled">Disabled example</label>
+              <input
+                type="text"
+                id="disabled"
+                value="Disabled input"
+                disabled
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="meter">Meter (storage used)</label>
+              <meter
+                id="meter"
+                min="0"
+                max="100"
+                value="65"
+                low="30"
+                high="85"
+                optimum="10"
+              >
+                65%
+              </meter>
+              <small class="hint">65% of 100 GB used</small>
+            </div>
+
+            <div class="form-field">
+              <label for="progress">Progress</label>
+              <progress id="progress" max="100" value="45">45%</progress>
+              <small class="hint">Sample progress indicator</small>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Actions -->
+        <div class="actions">
+          <button type="reset" class="btn ghost">Reset</button>
+          <button type="submit" class="btn primary">Create Account</button>
+        </div>
+
+        <p class="form-footer">
+          By continuing, you agree to our
+          <a href="#" rel="noopener">Terms</a> &amp;
+          <a href="#" rel="noopener">Privacy Policy</a>.
+        </p>
+      </form>
+
+      <footer class="page-footer">
+        <p>Made with semantic HTML, accessible labels, and modern CSS.</p>
+      </footer>
+    </main>
+  </body>
+</html>

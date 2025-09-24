@@ -1,0 +1,198 @@
+/* ---------- Minimal Reset ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+/* ---------- Palette (monochrome + single accent) ---------- */
+:root{
+  --bg: #0f1117;          /* page background */
+  --surface:#141821;      /* card + fields */
+  --text:#e7e9ee;         /* main text */
+  --muted:#9aa3b2;        /* secondary text */
+  --accent:#6aa3ff;       /* single accent color */
+  --border:#242a35;       /* hairline borders */
+  --ring: rgba(106,163,255,.35);
+
+  --radius:10px;
+  --radius-sm:8px;
+  --gap:0.75rem;
+  --gap-lg:0.9rem;
+
+  --shadow: 0 6px 20px rgba(0,0,0,.25);
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Inter, Roboto, Arial;
+}
+
+/* ---------- Base ---------- */
+html, body{
+  height:100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height:1.45;
+}
+
+a{ color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---------- Layout ---------- */
+.container{
+  max-width: 960px;
+  margin: 2.2rem auto;
+  padding: 0 1rem;
+}
+
+.page-header{
+  margin-bottom: 1rem;
+  text-align:center;
+}
+.page-header h1{
+  margin:0 0 .25rem;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+}
+.subtitle{ color:var(--muted); max-width:58ch; margin:0 auto; }
+
+/* ---------- Card/Form ---------- */
+.card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem; /* compact */
+}
+
+fieldset{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .9rem;
+  margin: .75rem 0 1rem;
+  background: transparent;
+}
+
+legend{
+  padding: 0 .4rem;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-lg);
+}
+@media (min-width:680px){
+  .grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Fields ---------- */
+.form-field{ display:flex; flex-direction:column; gap:.35rem; }
+label,.label{ font-weight:600; }
+.req{ color:#ff7b7b; margin-left:.25rem; }
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+input[type="week"],
+input[type="month"],
+input[type="datetime-local"],
+input[type="color"],
+input[type="range"],
+input[type="file"],
+select,
+textarea{
+  width:100%;
+  background:#0f141c;
+  color:var(--text);
+  border:1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: .6rem .75rem;   /* compact height */
+  outline:none;
+  transition: border-color 120ms ease, box-shadow 120ms ease, transform 60ms ease;
+}
+
+/* Minimal tweaks for special controls */
+textarea{ resize:vertical; min-height:100px; }
+input[type="color"]{ height:38px; padding:.2rem; }
+input[type="range"]{ padding:0; background:transparent; }
+input[type="file"]{ background:transparent; padding:.4rem .55rem; border-style:dashed; }
+
+/* Select: no flashy arrows, keep it minimal */
+select{ appearance:none; background-image:none; }
+
+/* Focus */
+input:focus, select:focus, textarea:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--ring);
+}
+
+/* Hints & error */
+.hint{ color:var(--muted); font-size:.9rem; }
+.form-field.error input,
+.form-field.error select,
+.form-field.error textarea{ border-color:#ff7b7b; box-shadow:0 0 0 3px rgba(255,123,123,.2); }
+.form-field.error .hint{ color:#ff9a9a; }
+
+/* Radios & checkboxes: subtle pills with outline only */
+.choice-group{ display:grid; gap:.45rem; }
+.choice{
+  display:inline-flex; align-items:center; gap:.55rem;
+  padding:.45rem .65rem;
+  background: transparent;
+  border:1px solid var(--border);
+  border-radius:999px;
+  width: fit-content;
+  cursor:pointer;
+  transition: border-color 120ms ease, transform 60ms ease;
+}
+.choice:hover{ transform: translateY(-1px); border-color:#303749; }
+.choice input{ accent-color: var(--accent); }
+
+/* Meter & progress */
+meter{ width:100%; height:.8rem; }
+progress{ width:100%; height:.8rem; appearance:none; }
+progress::-webkit-progress-bar{ background-color:#0f141c; border-radius:999px; }
+progress::-webkit-progress-value{ background-color: var(--accent); border-radius:999px; }
+
+/* ---------- Buttons ---------- */
+.actions{
+  display:flex; gap:.6rem; justify-content:flex-end; margin-top:.25rem;
+}
+.btn{
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:.6rem .9rem;
+  font-weight:600;
+  letter-spacing:.2px;
+  cursor:pointer;
+  color:var(--text);
+  background:#0f141c;
+  transition: transform 60ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
+
+.btn.primary{
+  background: var(--accent);
+  color:#0c1220;
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(106,163,255,.25);
+}
+.btn.primary:hover{ box-shadow: 0 8px 20px rgba(106,163,255,.32); }
+
+.btn.ghost{ background: transparent; }
+
+/* ---------- Footer ---------- */
+.form-footer{ color:var(--muted); text-align:center; margin-top:.6rem; }
+.page-footer{ text-align:center; color:var(--muted); margin-top:.75rem; }
+
+/* ---------- Optional: tighter vertical rhythm on small screens ---------- */
+@media (max-width:480px){
+  fieldset{ padding:.8rem; }
+  .card{ padding:.9rem; }
+}
